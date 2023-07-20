@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Task Manager</title>
+</head>
+<body>
+    <h1>Task Manager</h1>
+    <form method="post" action="/">
+        <label for="task">Task:</label>
+        <input type="text" id="task" name="task">
+        <input type="submit" value="Add Task">
+    </form>
+    <ul>
+        {% for task in tasks %}
+        <li>
+            {{ task }}
+            <a href="/remove/{{ loop.index0 }}">Remove</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
